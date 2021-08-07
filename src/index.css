@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+:root {
+    --bg: #303030;
+    --bg-accent: #232425;
+    --theme-color: #606060;
+    --height: 60px;
+    --item-hover: #454545;
+    --item-theme: #353535;
+    --border: 1px solid white;  
+}
+
+html, body, #root {
+    width: 100%;
+    height: 100%;
+}
+
+#root {
+    background: var(--bg);
+}
+
+#header {
+    width: 100%;
+    height: var(--height);
+    background: var(--bg-accent);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: auto;
+}
+
+.btn1 {
+    --button-size: calc(var(--height) * 0.8);
+    margin: 2px;
+    height: var(--button-size);
+    width: var(--button-size);
+    border-radius: 50%;
+    background: var(--theme-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#dropdown-container {
+    display: grid;
+    width: 200px;    
+}
+
+#dropdown-container > div:first-child {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+}
+
+#dropdown-menu {
+    position: absolute;
+    display: flex;
+    width: 198px;
+    right: 10px;
+    background: var(--item-theme);
+    border: var(--border);
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.2s ease;
+    border-radius: 5px;
+}
+
+.dropdown-item {
+    width: 180px;
+    height: calc(var(--height) * 0.9);
+    display: flex;
+    padding: 0px 20px;
+    align-items: center;
+    margin: calc((var(--height) * 0.1) / 2) 10px;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+    color: white;
+    font-size: 1rem;
+}
+
+.dropdown-item:hover {
+    background: var(--item-hover);
+}
+
+.first-menu-start {
+    position: relative;
+    transform: translateX(-110%);
+    
+}
+
+.first-menu-end {
+    transition: all 170ms ease;
+    transform: translateX(0);
+}
+
+.second-menu-start {
+    position: relative;
+    transform: translateX(110%);
+
+}
+
+.second-menu-end {
+    transition: all 170ms ease;
+    transform: translateX(0);
+}
